@@ -1,0 +1,6 @@
+{
+  "routes": [
+    { "id": 1, "text": "Home", "route": "/auth" },
+    { "id": 2, "text": "About", "route": "/auth/about" }
+  ]
+}

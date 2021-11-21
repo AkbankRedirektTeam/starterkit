@@ -1,11 +1,8 @@
-import React from "react"
-import ReactDOM from "react-dom"
-import i18n from "i18next"
-import { useTranslation, initReactI18next } from "react-i18next"
+import { use } from "i18next"
+import { initReactI18next } from "react-i18next"
 
 const initLang = () => {
-  i18n
-    .use(initReactI18next) // passes i18n down to react-i18next
+  use(initReactI18next) // passes i18n down to react-i18next
     .init({
       // the translations
       // (tip move them in a JSON file and import them,
@@ -16,7 +13,15 @@ const initLang = () => {
             SignIn: "Giriş yap",
             Copyright: "Copyright",
             AllRightsReserved: "Her haklı saklıdır",
-            PoweredBy: "Powered by"
+            PoweredBy: "Powered by",
+            EmailAddress: "E-posta adresi",
+            Password: "Şifre",
+            RememberMe: "Beni hatırla",
+            Login: "GİRİŞ",
+            ForgotPassword: "Şifremi unuttum",
+            NoAccountSignUp: "Hesabın yok mu? Kayıt ol!",
+            EmailRequired: "E-posta adresi girmek zorunludur.",
+            PasswordRequired: "Şifre girmek zorunludur."
           }
         },
         en: {
@@ -24,7 +29,15 @@ const initLang = () => {
             SignIn: "Sign in",
             Copyright: "Copyright",
             AllRightsReserved: "All Rights Reserved",
-            PoweredBy: "Powered by"
+            PoweredBy: "Powered by",
+            EmailAddress: "E-mail address",
+            Password: "Password",
+            RememberMe: "Remember me",
+            Login: "LOGIN",
+            ForgotPassword: "Forgot password",
+            NoAccountSignUp: "Don't have an account? Sign up!",
+            EmailRequired: "E-mail required.",
+            PasswordRequired: "Password required."
           }
         }
       },

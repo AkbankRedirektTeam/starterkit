@@ -1,8 +1,9 @@
 import * as React from "react"
+import { useForm } from "react-hook-form"
+import { useNavigate } from "react-router-dom"
 import Avatar from "@mui/material/Avatar"
 import Button from "@mui/material/Button"
 import CssBaseline from "@mui/material/CssBaseline"
-import TextField from "@mui/material/TextField"
 import FormControlLabel from "@mui/material/FormControlLabel"
 import Checkbox from "@mui/material/Checkbox"
 import Link from "@mui/material/Link"
@@ -11,21 +12,26 @@ import Box from "@mui/material/Box"
 import Grid from "@mui/material/Grid"
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined"
 import Typography from "@mui/material/Typography"
+import { TextInput } from "../../components/form/textfield"
 import Copyright from "../../components/copyright"
 import { useTranslation } from "react-i18next"
 import { createTheme, ThemeProvider } from "@mui/material/styles"
 
+const defaultValues = {
+  email: "",
+  password: ""
+}
+
 const theme = createTheme()
 const SignInSide = () => {
   const { t } = useTranslation()
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault()
-    const data = new FormData(event.currentTarget)
+  const { handleSubmit, control } = useForm()
+  let navigate = useNavigate()
+
+  const onSubmit = (data: any) => {
     // eslint-disable-next-line no-console
-    console.log({
-      email: data.get("email"),
-      password: data.get("password")
-    })
+    console.log(data)
+    navigate("/auth")
   }
 
   return (
@@ -62,43 +68,49 @@ const SignInSide = () => {
             <Typography component="h1" variant="h5">
               {t("SignIn")}
             </Typography>
-            <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }}>
-              <TextField
+            <Box component="form" noValidate onSubmit={handleSubmit(onSubmit)} sx={{ mt: 1 }}>
+              <TextInput
+                name="email"
+                control={control}
+                initialValue={defaultValues.email}
+                rules={{ required: t("EmailRequired") }}
                 margin="normal"
                 required
                 fullWidth
                 id="email"
-                label="Email Address"
-                name="email"
+                label={t("EmailAddress")}
                 autoComplete="email"
                 autoFocus
               />
-              <TextField
+              <TextInput
+                name="password"
+                control={control}
+                initialValue={defaultValues.password}
+                rules={{ required: t("PasswordRequired") }}
                 margin="normal"
                 required
                 fullWidth
-                name="password"
-                label="Password"
-                type="password"
                 id="password"
+                label={t("Password")}
+                type="password"
                 autoComplete="current-password"
               />
               <FormControlLabel
                 control={<Checkbox value="remember" color="primary" />}
-                label="Remember me"
+                label={t("RememberMe").toString()}
               />
               <Button type="submit" fullWidth variant="contained" sx={{ mt: 3, mb: 2 }}>
-                Sign In
+                {t("Login")}
               </Button>
               <Grid container>
-                <Grid item xs>
+                <Grid item xs={6}>
                   <Link href="#" variant="body2">
-                    Forgot password?
+                    {t("ForgotPassword")}
                   </Link>
                 </Grid>
-                <Grid item>
+                <Grid item xs={6}>
                   <Link href="#" variant="body2">
-                    {"Don't have an account? Sign Up"}
+                    {t("NoAccountSignUp")}
                   </Link>
                 </Grid>
               </Grid>

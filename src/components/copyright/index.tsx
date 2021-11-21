@@ -9,7 +9,7 @@ const Copyright = (props: any) => {
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
       {"© "}
       {t("Copyright")}
-      {new Date().getFullYear()}
+      {" " + new Date().getFullYear()}
       {" | "}
       {t("AllRightsReserved")}
       {" | "}
