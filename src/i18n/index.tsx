@@ -21,7 +21,10 @@ const initLang = () => {
             ForgotPassword: "Şifremi unuttum",
             NoAccountSignUp: "Hesabın yok mu? Kayıt ol!",
             EmailRequired: "E-posta adresi girmek zorunludur.",
-            PasswordRequired: "Şifre girmek zorunludur."
+            PasswordRequired: "Şifre girmek zorunludur.",
+            Dashboard: "Anasayfa",
+            About: "Hakkında",
+            KocaeliUniversity: "IEEE Kocaeli Üniversitesi"
           }
         },
         en: {
@@ -37,7 +40,10 @@ const initLang = () => {
             ForgotPassword: "Forgot password",
             NoAccountSignUp: "Don't have an account? Sign up!",
             EmailRequired: "E-mail required.",
-            PasswordRequired: "Password required."
+            PasswordRequired: "Password required.",
+            Dashboard: "Dashboard",
+            About: "About",
+            KocaeliUniversity: "IEEE Kocaeli University"
           }
         }
       },

@@ -32,12 +32,12 @@ const MenuDrawer = (props: any) => {
     >
       <List sx={{ paddingTop: "60px" }}>
         {Menu.routes.map((item) => (
-          <ListItem button key={item.id}>
-            {/*<ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon> */}
-            <Link to={item.route}>
+          <Link key={item.id} to={item.route}>
+            <ListItem button>
+              {/*<ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon> */}
               <ListItemText primary={item.text} />
-            </Link>
-          </ListItem>
+            </ListItem>
+          </Link>
         ))}
       </List>
       <Divider />

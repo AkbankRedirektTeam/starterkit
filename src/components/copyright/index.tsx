@@ -15,7 +15,7 @@ const Copyright = (props: any) => {
       {" | "}
       {t("PoweredBy")}
       <Link color="inherit" href="http://ieeekou.net/">
-        {" IEEE Kocaeli University"}
+        {" " + t("KocaeliUniversity")}
       </Link>
     </Typography>
   )

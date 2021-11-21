@@ -1,6 +1,7 @@
 import * as React from "react"
 import { useForm } from "react-hook-form"
 import { useNavigate } from "react-router-dom"
+import { useDispatch } from "react-redux"
 import Avatar from "@mui/material/Avatar"
 import Button from "@mui/material/Button"
 import CssBaseline from "@mui/material/CssBaseline"
@@ -14,6 +15,7 @@ import LockOutlinedIcon from "@mui/icons-material/LockOutlined"
 import Typography from "@mui/material/Typography"
 import { TextInput } from "../../components/form/textfield"
 import Copyright from "../../components/copyright"
+import { hideLoading, login } from "../../states"
 import { useTranslation } from "react-i18next"
 import { createTheme, ThemeProvider } from "@mui/material/styles"
 
@@ -25,13 +27,16 @@ const defaultValues = {
 const theme = createTheme()
 const SignInSide = () => {
   const { t } = useTranslation()
+  const dispatch = useDispatch()
   const { handleSubmit, control } = useForm()
-  let navigate = useNavigate()
+  const navigate = useNavigate()
 
-  const onSubmit = (data: any) => {
-    // eslint-disable-next-line no-console
-    console.log(data)
-    navigate("/auth")
+  const onSubmit = async (data: any) => {
+    const res: any = await dispatch(login(data))
+    if (res?.token) {
+      navigate("/auth")
+    }
+    dispatch(hideLoading())
   }
 
   return (
