@@ -64,7 +64,7 @@ export const setHeaderTitle = (title: string) => (dispatch: any) => {
 
 export const logout = () => async (dispatch: any) => {
   try {
-    // await api.post('/api/auth/logout/')
+    dispatch(changeLoadingStatus(true))
     return dispatch(logoutSuccess())
   } catch (e: any) {
     return console.error(e.message)

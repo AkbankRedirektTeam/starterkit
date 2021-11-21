@@ -26,7 +26,8 @@ const initLang = () => {
             About: "Biz kimiz?",
             Vision: "Ne yapıyoruz?",
             Committees: "Komitemiz",
-            KocaeliUniversity: "IEEE Kocaeli Üniversitesi"
+            KocaeliUniversity: "IEEE Kocaeli Üniversitesi",
+            Logout: "ÇIKIŞ YAP"
           }
         },
         en: {
@@ -47,7 +48,8 @@ const initLang = () => {
             About: "Who we are?",
             Vision: "What we do?",
             Committees: "Committees",
-            KocaeliUniversity: "IEEE Kocaeli University"
+            KocaeliUniversity: "IEEE Kocaeli University",
+            Logout: "LOG OUT"
           }
         }
       },
