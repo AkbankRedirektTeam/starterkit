@@ -22,12 +22,24 @@
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
     "plugin:jest/recommended",
-    "plugin:jsx-a11y/recommended"
+    "plugin:jsx-a11y/recommended",
+    "plugin:testing-library/react"
   ],
-  "plugins": ["eslint-comments", "import", "jest", "jsx-a11y", "prettier", "react", "react-hooks"],
+  "plugins": [
+    "eslint-comments",
+    "import",
+    "jest",
+    "jsx-a11y",
+    "prettier",
+    "react",
+    "react-hooks",
+    "testing-library"
+  ],
   "rules": {
     "no-unused-vars": 1,
-    "no-undef": 1
+    "no-undef": 1,
+    "jsx-a11y/no-autofocus": 1,
+    "testing-library/prefer-screen-queries": 1
   },
   "globals": {
     "__DEV__": true

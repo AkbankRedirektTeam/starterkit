@@ -14,6 +14,18 @@ module.exports = {
     ]
   ],
   plugins: [
+    [
+      "module-resolver",
+      {
+        root: ["./src"],
+        alias: {
+          app: "./app",
+          components: "./components",
+          features: "./features",
+          i18n: "./i18n"
+        }
+      }
+    ],
     "@babel/plugin-transform-runtime",
     [
       "@babel/plugin-proposal-decorators",
