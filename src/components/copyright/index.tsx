@@ -6,7 +6,13 @@ import { useTranslation } from "react-i18next"
 const Copyright = (props: any) => {
   const { t } = useTranslation()
   return (
-    <Typography variant="body2" color="text.secondary" align="center" {...props}>
+    <Typography
+      variant="body2"
+      color="text.secondary"
+      align="center"
+      paddingBottom="60px"
+      {...props}
+    >
       {"© "}
       {t("Copyright")}
       {" " + new Date().getFullYear()}

@@ -23,7 +23,9 @@ const initLang = () => {
             EmailRequired: "E-posta adresi girmek zorunludur.",
             PasswordRequired: "Şifre girmek zorunludur.",
             Dashboard: "Anasayfa",
-            About: "Hakkında",
+            About: "Biz kimiz?",
+            Vision: "Ne yapıyoruz?",
+            Committees: "Komitemiz",
             KocaeliUniversity: "IEEE Kocaeli Üniversitesi"
           }
         },
@@ -41,8 +43,10 @@ const initLang = () => {
             NoAccountSignUp: "Don't have an account? Sign up!",
             EmailRequired: "E-mail required.",
             PasswordRequired: "Password required.",
-            Dashboard: "Dashboard",
-            About: "About",
+            Dashboard: "Home",
+            About: "Who we are?",
+            Vision: "What we do?",
+            Committees: "Committees",
             KocaeliUniversity: "IEEE Kocaeli University"
           }
         }

@@ -1,6 +1,8 @@
 {
   "routes": [
-    { "id": 1, "text": "Home", "route": "/auth" },
-    { "id": 2, "text": "About", "route": "/auth/about" }
+    { "id": 1, "text": "Anasayfa", "route": "/auth" },
+    { "id": 2, "text": "Biz kimiz?", "route": "/auth/about" },
+    { "id": 3, "text": "Ne yapıyoruz?", "route": "/auth/vision" },
+    { "id": 4, "text": "Komitemiz", "route": "/auth/committees" }
   ]
 }
