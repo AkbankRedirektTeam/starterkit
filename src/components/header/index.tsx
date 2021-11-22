@@ -18,7 +18,7 @@ const Header = (props: any) => {
   const onIconClick = (event: any) => {
     props.onMenuClick && props.onMenuClick(event)
   }
-  const onLogoutClick = async (data: any) => {
+  const onLogoutClick = async () => {
     await dispatch(logout())
     navigate("/")
     dispatch(hideLoading())

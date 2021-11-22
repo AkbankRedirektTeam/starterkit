@@ -15,7 +15,7 @@ const App = (props: any) => {
     if (!props.token) {
       navigate("/")
     }
-  }, [])
+  }, [navigate, props.token])
   return (
     <div className="App">
       <header className="App-header">

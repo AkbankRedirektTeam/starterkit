@@ -85,6 +85,7 @@ const SignInSide = () => {
                 id="email"
                 label={t("EmailAddress")}
                 autoComplete="email"
+                // eslint-disable-next-line jsx-a11y/no-autofocus
                 autoFocus
               />
               <TextInput

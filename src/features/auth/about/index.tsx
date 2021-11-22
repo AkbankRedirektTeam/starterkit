@@ -9,7 +9,7 @@ const About = () => {
   const { t } = useTranslation()
   React.useEffect(() => {
     dispatch(setHeaderTitle(t("About")))
-  }, [])
+  }, [dispatch, t])
   return (
     <Box sx={{ display: "flex", flex: 1 }}>
       <main>
