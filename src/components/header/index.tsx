@@ -9,7 +9,7 @@ import Button from "@mui/material/Button"
 import IconButton from "@mui/material/IconButton"
 import MenuIcon from "@mui/icons-material/Menu"
 import { useTranslation } from "react-i18next"
-import { hideLoading, logout } from "../../states"
+import { logout } from "../../states"
 
 const Header = (props: any) => {
   const { t } = useTranslation()
@@ -21,7 +21,6 @@ const Header = (props: any) => {
   const onLogoutClick = async (data: any) => {
     await dispatch(logout())
     navigate("/")
-    dispatch(hideLoading())
   }
   return (
     <Box>

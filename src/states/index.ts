@@ -1,5 +1,29 @@
-import { createSlice } from "@reduxjs/toolkit"
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit"
 import axios from "axios"
+
+const sleep = (time: number) => new Promise((resolve) => setTimeout(resolve, time))
+
+// Async Thunks
+
+export const login = createAsyncThunk(
+  "loginAction",
+  async ({ email }: any, { rejectWithValue }) => {
+    const res = await axios.post("https://fakestoreapi.com/auth/login", {
+      username: "mor_2314",
+      password: "83r5^_"
+    })
+    if (!res?.data?.token) {
+      rejectWithValue("Token not found")
+    }
+
+    return { email, token: res.data.token }
+  }
+)
+
+export const logout = createAsyncThunk("logoutAction", async () => {
+  await sleep(1000)
+  return null
+})
 
 // Slice
 
@@ -12,61 +36,36 @@ const appState = createSlice({
     email: ""
   },
   reducers: {
-    changeLoadingStatus: (state, action) => {
-      state.loading = action.payload
-    },
-    changeHeaderTitle: (state, action) => {
+    setHeaderTitle: (state, action) => {
       state.headerTitle = action.payload
-    },
-    loginSuccess: (state, action) => {
-      state.email = action.payload.email
-      state.token = action.payload.token
-    },
-    logoutSuccess: (state) => {
-      state.headerTitle = ""
-      state.email = ""
-      state.token = null
     }
-  }
+  },
+  extraReducers: (builder) =>
+    builder
+      .addCase(login.pending, (state) => {
+        state.loading = true
+      })
+      .addCase(login.fulfilled, (state, action) => {
+        state.email = action.payload.email
+        state.token = action.payload.token
+        state.loading = false
+      })
+      .addCase(login.rejected, (state, action) => {
+        state.loading = false
+        //do whatever you want
+      })
+      .addCase(logout.pending, (state) => {
+        state.loading = true
+      })
+      .addCase(logout.fulfilled, (state) => {
+        state.loading = false
+        state.headerTitle = ""
+        state.token = null
+      })
 })
 
 export default appState.reducer
 
 // Actions
 
-const { loginSuccess, logoutSuccess, changeLoadingStatus, changeHeaderTitle } = appState.actions
-
-export const login =
-  ({ email }: any) =>
-  async (dispatch: any) => {
-    try {
-      dispatch(changeLoadingStatus(true))
-      const res: any = await axios.post("https://fakestoreapi.com/auth/login", {
-        username: "mor_2314",
-        password: "83r5^_"
-      })
-      if (res?.data?.token) {
-        dispatch(loginSuccess({ email, token: res.data.token }))
-        return res.data
-      }
-    } catch (e: any) {
-      return console.error(e.message)
-    }
-  }
-
-export const hideLoading = () => (dispatch: any) => {
-  return dispatch(changeLoadingStatus(false))
-}
-
-export const setHeaderTitle = (title: string) => (dispatch: any) => {
-  return dispatch(changeHeaderTitle(title))
-}
-
-export const logout = () => async (dispatch: any) => {
-  try {
-    dispatch(changeLoadingStatus(true))
-    return dispatch(logoutSuccess())
-  } catch (e: any) {
-    return console.error(e.message)
-  }
-}
+export const { setHeaderTitle } = appState.actions
