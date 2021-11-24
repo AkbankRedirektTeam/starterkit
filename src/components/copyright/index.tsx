@@ -10,18 +10,19 @@ const Copyright = (props: any) => {
       variant="body2"
       color="text.secondary"
       align="center"
-      paddingBottom="60px"
       {...props}
+      sx={{
+        pb: 8,
+        ...props?.sx
+      }}
     >
-      {"© "}
-      {t("Copyright")}
-      {" " + new Date().getFullYear()}
-      {" | "}
+      {new Date().getFullYear()}
+      {" © "}
       {t("AllRightsReserved")}
-      {" | "}
-      {t("PoweredBy")}
+      <br />
+      {t("PoweredBy")}{" "}
       <Link color="inherit" href="http://ieeekou.net/">
-        {" " + t("KocaeliUniversity")}
+        {t("KocaeliUniversity")}
       </Link>
     </Typography>
   )

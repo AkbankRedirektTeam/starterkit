@@ -12,7 +12,7 @@ const initLang = () => {
           translation: {
             SignIn: "Giriş yap",
             Copyright: "Copyright",
-            AllRightsReserved: "Her haklı saklıdır",
+            AllRightsReserved: "Her hakkı saklıdır.",
             PoweredBy: "Powered by",
             EmailAddress: "E-posta adresi",
             Password: "Şifre",
@@ -34,7 +34,7 @@ const initLang = () => {
           translation: {
             SignIn: "Sign in",
             Copyright: "Copyright",
-            AllRightsReserved: "All Rights Reserved",
+            AllRightsReserved: "All rights reserved.",
             PoweredBy: "Powered by",
             EmailAddress: "E-mail address",
             Password: "Password",
