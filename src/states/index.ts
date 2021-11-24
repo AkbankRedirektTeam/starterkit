@@ -32,7 +32,7 @@ const initialState: {
   email: string
 } = {
   loading: false,
-  token: "some-token",
+  token: null,
   headerTitle: "",
   email: ""
 }
