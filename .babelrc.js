@@ -24,7 +24,7 @@ module.exports = {
           features: "./features",
           i18n: "./i18n",
           states: "./states",
-          themes: "themes"
+          themes: "./themes"
         }
       }
     ],
