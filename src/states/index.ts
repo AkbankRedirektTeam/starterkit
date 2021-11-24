@@ -50,7 +50,7 @@ const appState = createSlice({
         state.token = action.payload.token
         state.loading = false
       })
-      .addCase(login.rejected, (state, action) => {
+      .addCase(login.rejected, (state) => {
         state.loading = false
         //do whatever you want
       })
