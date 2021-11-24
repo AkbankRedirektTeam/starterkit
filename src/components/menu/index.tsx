@@ -10,7 +10,7 @@ import ListItem from "@mui/material/ListItem"
 import ListItemText from "@mui/material/ListItemText"
 // import InboxIcon from "@mui/icons-material/MoveToInbox"
 // import MailIcon from "@mui/icons-material/Mail"
-import Menu from "../../app/menu.json"
+import Menu from "app/menu.json"
 
 const MenuDrawer = (props: any) => {
   const [open, setOpen] = React.useState(props.open ? props.open : false)

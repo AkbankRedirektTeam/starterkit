@@ -6,9 +6,9 @@ import Dashboard from "./dashboard"
 import About from "./about"
 import Vision from "./vision"
 import Committees from "./committees"
-import MenuDrawer from "../../components/menu"
-import Header from "../../components/header"
-import Copyright from "../../components/copyright"
+import MenuDrawer from "components/menu"
+import Header from "components/header"
+import Copyright from "components/copyright"
 
 const Auth = () => {
   const headerTitle = useSelector((s: any) => s.appState.headerTitle)

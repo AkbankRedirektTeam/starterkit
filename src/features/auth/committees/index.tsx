@@ -2,7 +2,7 @@ import * as React from "react"
 import { useDispatch } from "react-redux"
 import { useTranslation } from "react-i18next"
 import Box from "@mui/material/Box"
-import { setHeaderTitle } from "../../../states"
+import { setHeaderTitle } from "states"
 
 const Committees = () => {
   const dispatch = useDispatch()

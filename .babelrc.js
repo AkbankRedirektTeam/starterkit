@@ -22,7 +22,9 @@ module.exports = {
           app: "./app",
           components: "./components",
           features: "./features",
-          i18n: "./i18n"
+          i18n: "./i18n",
+          states: "./states",
+          themes: "themes"
         }
       }
     ],

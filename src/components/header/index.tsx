@@ -9,7 +9,7 @@ import Button from "@mui/material/Button"
 import IconButton from "@mui/material/IconButton"
 import MenuIcon from "@mui/icons-material/Menu"
 import { useTranslation } from "react-i18next"
-import { logout } from "../../states"
+import { logout } from "states"
 
 const Header = (props: any) => {
   const { t } = useTranslation()
