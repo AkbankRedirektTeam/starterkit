@@ -34,19 +34,24 @@ const SignInSide = () => {
   }
 
   return (
-    <Grid container component="main" sx={{ height: "100vh" }}>
+    <Grid
+      container
+      component="main"
+      sx={{
+        height: "100vh",
+        bgcolor: "primary.main",
+        backgroundImage: "url('/felix-mittermeier-ihbqhutI9x4-unsplash.jpg')",
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+        backgroundPosition: "center"
+      }}
+    >
       <Grid
         item
         xs={false}
         sm={false}
         md={7}
         sx={{
-          backgroundImage: "url(raychan-jrNY1BZhnJg-unsplash.jpg)",
-          backgroundRepeat: "no-repeat",
-          backgroundColor: (t) =>
-            t.palette.mode === "light" ? t.palette.grey[50] : t.palette.grey[900],
-          backgroundSize: "cover",
-          backgroundPosition: "center",
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
@@ -60,7 +65,7 @@ const SignInSide = () => {
       >
         <Box
           component="img"
-          src="logo.png"
+          src="/logo.png"
           alt="Logo"
           sx={{
             width: {

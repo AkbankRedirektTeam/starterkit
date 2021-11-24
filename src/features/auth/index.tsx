@@ -21,9 +21,9 @@ const Auth = () => {
     <>
       <Header title={headerTitle} onMenuClick={() => toggleDrawer(!isMenuOpen)} />
       <MenuDrawer open={isMenuOpen} toggleDrawer={(open: boolean) => toggleDrawer(open)} />
-      <Box sx={{ paddingLeft: "350px", flex: 1 }}>
+      <Box sx={{ flex: 1, px: 3, pb: 3, textAlign: "left" }}>
         <Routes>
-          <Route path="*" element={<Dashboard />} />
+          <Route path="/" element={<Dashboard />} />
           <Route path="about" element={<About />} />
           <Route path="vision" element={<Vision />} />
           <Route path="committees" element={<Committees />} />

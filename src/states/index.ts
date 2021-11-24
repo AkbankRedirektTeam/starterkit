@@ -25,16 +25,23 @@ export const logout = createAsyncThunk("logoutAction", async () => {
   return null
 })
 
+const initialState: {
+  loading: boolean
+  token: string | null
+  headerTitle: string
+  email: string
+} = {
+  loading: false,
+  token: "some-token",
+  headerTitle: "",
+  email: ""
+}
+
 // Slice
 
 const appState = createSlice({
   name: "appState",
-  initialState: {
-    loading: false,
-    token: null,
-    headerTitle: "",
-    email: ""
-  },
+  initialState,
   reducers: {
     setHeaderTitle: (state, action) => {
       state.headerTitle = action.payload

@@ -1,5 +1,5 @@
 import * as React from "react"
-import { Link } from "react-router-dom"
+import { Link, NavLink } from "react-router-dom"
 import Box from "@mui/material/Box"
 import Drawer from "@mui/material/Drawer"
 // import Button from "@mui/material/Button"
@@ -11,6 +11,7 @@ import ListItemText from "@mui/material/ListItemText"
 // import InboxIcon from "@mui/icons-material/MoveToInbox"
 // import MailIcon from "@mui/icons-material/Mail"
 import Menu from "app/menu.json"
+import Copyright from "components/copyright"
 
 const MenuDrawer = (props: any) => {
   const [open, setOpen] = React.useState(props.open ? props.open : false)
@@ -25,28 +26,65 @@ const MenuDrawer = (props: any) => {
 
   const list = () => (
     <Box
-      sx={{ width: "250px" }}
+      sx={{ width: 250 }}
       role="presentation"
       onClick={() => toggleDrawer(false)}
       onKeyDown={() => toggleDrawer(false)}
     >
-      <List sx={{ paddingTop: "60px" }}>
+      <Box
+        sx={{
+          bgcolor: "primary.main",
+          px: 3,
+          py: 1,
+          height: 64,
+          display: "flex",
+          alignItems: "center"
+        }}
+      >
+        <Box
+          component="img"
+          src="/logo.png"
+          alt="Logo"
+          sx={{
+            width: "100%"
+          }}
+        />
+      </Box>
+      <List sx={{ py: 2.5 }}>
         {Menu.routes.map((item) => (
-          <Link key={item.id} to={item.route}>
-            <ListItem button>
+          <ListItem
+            key={item.id}
+            sx={{
+              padding: 0,
+              "& a": {
+                textDecoration: "none",
+                color: "primary.main",
+                display: "flex",
+                width: "100%",
+                px: 3,
+                py: 1.5
+              }
+            }}
+          >
+            <NavLink to={item.route}>
               {/*<ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon> */}
               <ListItemText primary={item.text} />
-            </ListItem>
-          </Link>
+            </NavLink>
+          </ListItem>
         ))}
       </List>
       <Divider />
+      <Copyright
+        sx={{
+          mt: 3
+        }}
+      />
     </Box>
   )
 
   return (
     <div>
-      <Drawer anchor="left" open={open} onClose={() => toggleDrawer(false)}>
+      <Drawer anchor="right" open={open} onClose={() => toggleDrawer(false)}>
         {list()}
       </Drawer>
     </div>

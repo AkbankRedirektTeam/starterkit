@@ -3,7 +3,11 @@ import Link from "@mui/material/Link"
 import Typography from "@mui/material/Typography"
 import { useTranslation } from "react-i18next"
 
-const Copyright = (props: any) => {
+interface Props {
+  sx?: any
+}
+
+const Copyright = (props: Props) => {
   const { t } = useTranslation()
   return (
     <Typography
@@ -12,7 +16,7 @@ const Copyright = (props: any) => {
       align="center"
       {...props}
       sx={{
-        pb: 8,
+        pb: 4,
         ...props?.sx
       }}
     >

@@ -17,7 +17,9 @@ const themeLight = createTheme({
       fontFamily
     },
     h3: {
-      fontFamily
+      fontFamily,
+      marginTop: 32,
+      marginBottom: 12
     },
     h4: {
       fontFamily
