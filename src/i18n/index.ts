@@ -8,30 +8,48 @@ const initLang = () => {
       // (tip move them in a JSON file and import them,
       // or even better, manage them via a UI: https://react.i18next.com/guides/multiple-translation-files#manage-your-translations-with-a-management-gui)
       resources: {
-        en: {
-          translation: {
-            SignIn: "Sign in",
-            EmailAddress: "E-mail address",
-            Password: "Password",
-            RememberMe: "Remember me",
-            ForgotPass: "Forgot password",
-            SignUp: "Don't have an account? Sign up!",
-            AllRightsReserved: "All Rights Reserved",
-            PoweredBy: "Powered by",
-            KocaeliUniversity: "Kocaeli University"
-          }
-        },
         tr: {
           translation: {
             SignIn: "Giriş yap",
+            Copyright: "Copyright",
+            AllRightsReserved: "Her hakkı saklıdır.",
+            PoweredBy: "Powered by",
             EmailAddress: "E-posta adresi",
             Password: "Şifre",
             RememberMe: "Beni hatırla",
-            ForgotPass: "Şifremi unuttum",
-            SignUp: "Hesabın yok mu? Kayıt ol!",
-            AllRightsReserved: "Tüm hakları saklıdır",
+            Login: "GİRİŞ",
+            ForgotPassword: "Şifremi unuttum",
+            NoAccountSignUp: "Hesabın yok mu? Kayıt ol!",
+            EmailRequired: "E-posta adresi girmek zorunludur.",
+            PasswordRequired: "Şifre girmek zorunludur.",
+            Dashboard: "Anasayfa",
+            About: "Biz kimiz?",
+            Vision: "Ne yapıyoruz?",
+            Committees: "Komitemiz",
+            KocaeliUniversity: "IEEE Kocaeli Üniversitesi",
+            Logout: "ÇIKIŞ YAP"
+          }
+        },
+        en: {
+          translation: {
+            SignIn: "Sign in",
+            Copyright: "Copyright",
+            AllRightsReserved: "All rights reserved.",
             PoweredBy: "Powered by",
-            KocaeliUniversity: "Kocaeli Üniversitesi"
+            EmailAddress: "E-mail address",
+            Password: "Password",
+            RememberMe: "Remember me",
+            Login: "LOGIN",
+            ForgotPassword: "Forgot password",
+            NoAccountSignUp: "Don't have an account? Sign up!",
+            EmailRequired: "E-mail required.",
+            PasswordRequired: "Password required.",
+            Dashboard: "Home",
+            About: "Who we are?",
+            Vision: "What we do?",
+            Committees: "Committees",
+            KocaeliUniversity: "IEEE Kocaeli University",
+            Logout: "LOG OUT"
           }
         }
       },

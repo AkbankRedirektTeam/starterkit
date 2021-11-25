@@ -1,38 +1,19 @@
 {
-  "name": "starterkit",
+  "name": "ieeeweb",
   "version": "0.1.0",
   "private": true,
-  "dependencies": {
-    "@emotion/react": "^11.6.0",
-    "@emotion/styled": "^11.6.0",
-    "@mui/icons-material": "^5.2.0",
-    "@mui/material": "^5.2.0",
-    "@reduxjs/toolkit": "^1.5.1",
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.3.2",
-    "@testing-library/user-event": "^7.1.2",
-    "@types/jest": "^24.0.0",
-    "@types/node": "^12.0.0",
-    "@types/react": "^16.9.0",
-    "@types/react-dom": "^16.9.0",
-    "@types/react-redux": "^7.1.7",
-    "i18next": "^21.5.3",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-i18next": "^11.14.3",
-    "react-redux": "^7.2.0",
-    "react-router-dom": "6",
-    "react-scripts": "4.0.3",
-    "typescript": "~4.1.5"
-  },
   "scripts": {
-    "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "eslint . --fix --color --ext .js,.jsx,.ts,.tsx",
+    "prettier": "prettier -w .",
+    "start": "react-scripts start",
+    "test": "react-scripts test"
   },
-  "eslintConfig": {
-    "extends": "react-app"
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn prettier && yarn lint"
+    }
   },
   "browserslist": {
     "production": [
@@ -45,5 +26,63 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "dependencies": {
+    "@emotion/react": "11.6.0",
+    "@emotion/styled": "11.6.0",
+    "@material-ui/pickers": "3.3.10",
+    "@mui/icons-material": "5.1.1",
+    "@mui/material": "5.1.1",
+    "@reduxjs/toolkit": "1.6.2",
+    "axios": "0.24.0",
+    "i18next": "21.5.2",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "react-hook-form": "7.20.2",
+    "react-i18next": "11.14.2",
+    "react-redux": "7.2.6",
+    "react-router-dom": "6.0.2"
+  },
+  "devDependencies": {
+    "@babel/core": "7.16.0",
+    "@babel/eslint-parser": "7.16.3",
+    "@babel/node": "7.16.0",
+    "@babel/plugin-proposal-class-properties": "7.16.0",
+    "@babel/plugin-proposal-decorators": "7.16.4",
+    "@babel/plugin-proposal-export-default-from": "7.16.0",
+    "@babel/plugin-proposal-object-rest-spread": "7.16.0",
+    "@babel/plugin-proposal-private-methods": "7.16.0",
+    "@babel/plugin-proposal-private-property-in-object": "7.16.0",
+    "@babel/plugin-transform-arrow-functions": "7.16.0",
+    "@babel/plugin-transform-runtime": "7.16.4",
+    "@babel/preset-env": "7.16.4",
+    "@babel/preset-react": "7.16.0",
+    "@babel/preset-typescript": "7.16.0",
+    "@testing-library/jest-dom": "5.15.0",
+    "@testing-library/react": "12.1.2",
+    "@testing-library/user-event": "13.5.0",
+    "@types/jest": "27.0.3",
+    "@types/node": "16.11.9",
+    "@types/react": "17.0.36",
+    "@types/react-dom": "17.0.11",
+    "@types/react-redux": "7.1.20",
+    "@types/react-router-dom": "5.3.2",
+    "@typescript-eslint/parser": "5.4.0",
+    "babel-plugin-module-resolver": "4.1.0",
+    "eslint": "8.3.0",
+    "eslint-import-resolver-typescript": "2.5.0",
+    "eslint-plugin-eslint-comments": "3.2.0",
+    "eslint-plugin-import": "2.25.3",
+    "eslint-plugin-jest": "25.2.4",
+    "eslint-plugin-jsx-a11y": "6.5.1",
+    "eslint-plugin-prettier": "4.0.0",
+    "eslint-plugin-react": "7.27.1",
+    "eslint-plugin-react-hooks": "4.3.0",
+    "eslint-plugin-testing-library": "5.0.0",
+    "husky": "4.3.8",
+    "pre-commit": "1.2.2",
+    "prettier": "2.4.1",
+    "react-scripts": "4.0.3",
+    "typescript": "4.5.2"
   }
 }
