@@ -1,10 +1,10 @@
-import * as React from "react";
-import { Routes, Route } from "react-router-dom";
-import SignInSide from "./features/login";
-import initLang from "./i18n";
-import "./App.css";
+import * as React from "react"
+import { Routes, Route } from "react-router-dom"
+import SignInSide from "./features/login"
+import initLang from "./i18n"
+import "./App.css"
 
-initLang();
+initLang()
 
 const App = () => {
   return (
@@ -13,7 +13,7 @@ const App = () => {
         <Route path="/" element={<SignInSide />} />
       </Routes>
     </div>
-  );
-};
+  )
+}
 
-export default App;
+export default App

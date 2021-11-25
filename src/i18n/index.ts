@@ -1,5 +1,5 @@
-import { use } from "i18next";
-import { initReactI18next } from "react-i18next";
+import { use } from "i18next"
+import { initReactI18next } from "react-i18next"
 
 const initLang = () => {
   use(initReactI18next) // passes i18n down to react-i18next
@@ -18,8 +18,8 @@ const initLang = () => {
             SignUp: "Don't have an account? Sign up!",
             AllRightsReserved: "All Rights Reserved",
             PoweredBy: "Powered by",
-            KocaeliUniversity: "Kocaeli University",
-          },
+            KocaeliUniversity: "Kocaeli University"
+          }
         },
         tr: {
           translation: {
@@ -31,16 +31,16 @@ const initLang = () => {
             SignUp: "Hesabın yok mu? Kayıt ol!",
             AllRightsReserved: "Tüm hakları saklıdır",
             PoweredBy: "Powered by",
-            KocaeliUniversity: "Kocaeli Üniversitesi",
-          },
-        },
+            KocaeliUniversity: "Kocaeli Üniversitesi"
+          }
+        }
       },
       lng: "tr", // if you're using a language detector, do not define the lng option
       fallbackLng: "tr",
       interpolation: {
-        escapeValue: false, // react already safes from xss => https://www.i18next.com/translation-function/interpolation#unescape
-      },
-    });
-};
+        escapeValue: false // react already safes from xss => https://www.i18next.com/translation-function/interpolation#unescape
+      }
+    })
+}
 
-export default initLang;
+export default initLang

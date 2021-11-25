@@ -1,4 +1,4 @@
-import * as React from "react";
+import * as React from "react"
 /*import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";*/
 import {
@@ -11,25 +11,25 @@ import {
   Link,
   Paper,
   TextField,
-  Typography,
-} from "@mui/material";
-import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
-import Copyright from "../../components/copyright";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { CssBaseline } from "@mui/material";
-import { useTranslation } from "react-i18next";
+  Typography
+} from "@mui/material"
+import LockOutlinedIcon from "@mui/icons-material/LockOutlined"
+import Copyright from "../../components/copyright"
+import { createTheme, ThemeProvider } from "@mui/material/styles"
+import { CssBaseline } from "@mui/material"
+import { useTranslation } from "react-i18next"
 
-const theme = createTheme();
+const theme = createTheme()
 
 const SignInSide = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation()
 
   const handleSubmit = (evt: React.FormEvent<HTMLFormElement>) => {
-    evt?.preventDefault();
-    const data = new FormData(evt?.currentTarget);
-    console.log(">>>email: ", data.get("email"));
-    console.log(">>>password: ", data.get("password"));
-  };
+    evt?.preventDefault()
+    const data = new FormData(evt?.currentTarget)
+    console.log(">>>email: ", data.get("email"))
+    console.log(">>>password: ", data.get("password"))
+  }
 
   return (
     <ThemeProvider theme={theme}>
@@ -42,13 +42,11 @@ const SignInSide = () => {
           md={7}
           sx={{
             backgroundColor: (theme) =>
-              theme.palette.mode === "light"
-                ? theme.palette.grey[50]
-                : theme.palette.grey[900],
+              theme.palette.mode === "light" ? theme.palette.grey[50] : theme.palette.grey[900],
             backgroundImage: "url(/backgroundImage.jpeg)",
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover",
-            backgroundPosition: "center",
+            backgroundPosition: "center"
           }}
         />
         <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
@@ -58,7 +56,7 @@ const SignInSide = () => {
               mx: 4,
               display: "flex",
               flexDirection: "column",
-              alignItems: "center",
+              alignItems: "center"
             }}
           >
             <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
@@ -97,12 +95,7 @@ const SignInSide = () => {
                 control={<Checkbox value="remember" color="primary" />}
                 label={t("RememberMe").toString()}
               />
-              <Button
-                type="submit"
-                fullWidth
-                variant="contained"
-                sx={{ mt: 3, mb: 2 }}
-              >
+              <Button type="submit" fullWidth variant="contained" sx={{ mt: 3, mb: 2 }}>
                 {t("SignIn")}
               </Button>
               <Grid container>
@@ -123,7 +116,7 @@ const SignInSide = () => {
         </Grid>
       </Grid>
     </ThemeProvider>
-  );
-};
+  )
+}
 
-export default SignInSide;
+export default SignInSide

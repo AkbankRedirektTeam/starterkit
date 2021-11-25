@@ -1,13 +1,13 @@
-import * as React from "react";
-import { Link, Typography } from "@mui/material";
-import { useTranslation } from "react-i18next";
+import * as React from "react"
+import { Link, Typography } from "@mui/material"
+import { useTranslation } from "react-i18next"
 
 interface Props {
-  sx?: any;
+  sx?: any
 }
 
 const Copyright = (props: Props) => {
-  const { t } = useTranslation();
+  const { t } = useTranslation()
   return (
     <Typography
       variant="body2"
@@ -16,7 +16,7 @@ const Copyright = (props: Props) => {
       {...props}
       sx={{
         pb: 4,
-        ...props?.sx,
+        ...props?.sx
       }}
     >
       {new Date().getFullYear()}
@@ -28,7 +28,7 @@ const Copyright = (props: Props) => {
         {t("KocaeliUniversity")}
       </Link>
     </Typography>
-  );
-};
+  )
+}
 
-export default Copyright;
+export default Copyright
