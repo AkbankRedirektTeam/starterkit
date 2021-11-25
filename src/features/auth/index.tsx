@@ -1,5 +1,5 @@
 import * as React from "react"
-import { Routes, Route } from "react-router-dom"
+import { Route, Routes } from "react-router-dom"
 import { useSelector } from "react-redux"
 import Box from "@mui/material/Box"
 import Dashboard from "./dashboard"

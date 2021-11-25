@@ -8,6 +8,7 @@ import Typography from "@mui/material/Typography"
 import Button from "@mui/material/Button"
 import IconButton from "@mui/material/IconButton"
 import MenuIcon from "@mui/icons-material/Menu"
+import Hidden from "@mui/material/Hidden"
 import { useTranslation } from "react-i18next"
 import { logout } from "states"
 import Menu from "app/menu.json"
@@ -44,63 +45,93 @@ const Header = (props: any) => {
               src="/logo.png"
               alt="Logo"
               sx={{
-                height: 32
+                height: {
+                  xs: 24,
+                  sm: 32
+                }
               }}
             />
           </Link>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            <Box component="nav" sx={{ height: "100%" }}>
-              <Box
-                component="ul"
-                sx={{
-                  display: "flex",
-                  height: "100%"
-                }}
-              >
-                {Menu.routes.map((item) => (
-                  <Box
-                    key={item.id}
-                    component="li"
-                    sx={{
-                      height: "100%",
-                      "& a": {
-                        color: "common.white",
-                        textDecoration: "none",
-                        px: 2,
-                        py: 1,
-                        display: "flex",
+          <Hidden mdDown>
+            <Typography
+              variant="h6"
+              component="div"
+              sx={{
+                flexGrow: 1,
+                fontSize: {
+                  md: 16,
+                  lg: 20
+                }
+              }}
+            >
+              <Box component="nav" sx={{ height: "100%" }}>
+                <Box
+                  component="ul"
+                  sx={{
+                    display: "flex",
+                    height: "100%"
+                  }}
+                >
+                  {Menu.routes.map((item) => (
+                    <Box
+                      key={item.id}
+                      component="li"
+                      sx={{
                         height: "100%",
-                        alignItems: "center",
-                        borderTop: "3px solid transparent",
-                        borderBottom: "3px solid transparent",
-                        lineHeight: 0
-                      }
-                    }}
-                  >
-                    <NavLink
-                      to={item.route}
-                      style={({ isActive }) =>
-                        isActive
-                          ? {
-                              borderBottomColor: "white"
-                            }
-                          : {}
-                      }
+                        "& a": {
+                          color: "common.white",
+                          textDecoration: "none",
+                          px: {
+                            md: 1.5,
+                            lg: 2
+                          },
+                          py: 1,
+                          display: "flex",
+                          height: "100%",
+                          alignItems: "center",
+                          borderTop: "3px solid transparent",
+                          borderBottom: "3px solid transparent",
+                          whiteSpace: "nowrap"
+                        }
+                      }}
                     >
-                      {item.text}
-                    </NavLink>
-                  </Box>
-                ))}
+                      <NavLink
+                        to={item.route}
+                        style={({ isActive }) =>
+                          isActive
+                            ? {
+                                borderBottomColor: "white"
+                              }
+                            : {}
+                        }
+                      >
+                        {item.text}
+                      </NavLink>
+                    </Box>
+                  ))}
+                </Box>
               </Box>
-            </Box>
-          </Typography>
-          <Button onClick={onLogoutClick} color="inherit">
-            {t("Logout")}
-          </Button>
+            </Typography>
+          </Hidden>
+          <Hidden smDown>
+            <Button
+              onClick={onLogoutClick}
+              color="inherit"
+              sx={{
+                ml: "auto"
+              }}
+            >
+              {t("Logout")}
+            </Button>
+          </Hidden>
           <Box
             sx={{
               display: "flex",
-              alignItems: "center"
+              alignItems: "center",
+              ml: {
+                xs: "auto",
+                sm: 0
+              }
             }}
           >
             <IconButton

@@ -30,7 +30,7 @@ const SignInSide = () => {
 
   const onSubmit = async (data: any) => {
     await dispatch(login(data))
-    navigate("/auth")
+    navigate("/auth/")
   }
 
   return (

@@ -1,4 +1,4 @@
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit"
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit"
 import axios from "axios"
 
 const sleep = (time: number) => new Promise((resolve) => setTimeout(resolve, time))

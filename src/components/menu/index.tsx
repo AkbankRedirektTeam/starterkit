@@ -1,5 +1,5 @@
 import * as React from "react"
-import { Link, NavLink } from "react-router-dom"
+import { NavLink, useNavigate } from "react-router-dom"
 import Box from "@mui/material/Box"
 import Drawer from "@mui/material/Drawer"
 // import Button from "@mui/material/Button"
@@ -12,8 +12,19 @@ import ListItemText from "@mui/material/ListItemText"
 // import MailIcon from "@mui/icons-material/Mail"
 import Menu from "app/menu.json"
 import Copyright from "components/copyright"
+import { useTranslation } from "react-i18next"
+import { useDispatch } from "react-redux"
+import { logout } from "../../states"
 
 const MenuDrawer = (props: any) => {
+  const { t } = useTranslation()
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
+  const onLogoutClick = async () => {
+    await dispatch(logout())
+    navigate("/")
+  }
+
   const [open, setOpen] = React.useState(props.open ? props.open : false)
   React.useEffect(() => {
     setOpen(props.open)
@@ -72,6 +83,19 @@ const MenuDrawer = (props: any) => {
             </NavLink>
           </ListItem>
         ))}
+        <ListItem
+          button
+          onClick={onLogoutClick}
+          color="inherit"
+          sx={{
+            ml: "auto",
+            mt: 1,
+            px: 3,
+            color: "red"
+          }}
+        >
+          {t("Logout")}
+        </ListItem>
       </List>
       <Divider />
       <Copyright

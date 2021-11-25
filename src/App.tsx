@@ -1,6 +1,6 @@
 import * as React from "react"
 import { connect } from "react-redux"
-import { Routes, Route, useNavigate } from "react-router-dom"
+import { Route, Routes, useNavigate } from "react-router-dom"
 import CssBaseline from "@mui/material/CssBaseline"
 import CircularProgress from "@mui/material/CircularProgress"
 import Backdrop from "@mui/material/Backdrop"
