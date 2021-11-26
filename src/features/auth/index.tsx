@@ -6,11 +6,13 @@ import About from "./about"
 import Vision from "./vision"
 import Committees from "./committees"
 import Copyright from "components/copyright"
+import Header from "components/header"
 
 const Auth = () => {
   return (
     <>
-      <Box sx={{ flex: 1, px: 3, pb: 3, textAlign: "left" }}>
+      <Header />
+      <Box sx={{ flex: 1, p: 3, textAlign: "left" }}>
         <Routes>
           <Route path="/" element={<Dashboard />} />
           <Route path="about" element={<About />} />

@@ -16,10 +16,10 @@ const App = () => {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Box className="App">
-        <Box component="header" className="App-header">
+        <Box component="div" className="App-header">
           <Routes>
             <Route path="/" element={<SignInSide />} />
-            <Route path="/auth/" element={<Auth />} />
+            <Route path="/auth/*" element={<Auth />} />
           </Routes>
         </Box>
       </Box>
