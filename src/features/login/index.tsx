@@ -1,4 +1,6 @@
 import * as React from "react"
+import { useNavigate } from "react-router-dom"
+import { useForm } from "react-hook-form"
 import {
   Avatar,
   Box,
@@ -8,21 +10,25 @@ import {
   Grid,
   Link,
   Paper,
-  TextField,
   Typography
 } from "@mui/material"
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined"
 import Copyright from "components/copyright"
+import { TextInput } from "components/textinput"
 import { useTranslation } from "react-i18next"
 
 const SignInSide = () => {
   const { t } = useTranslation()
-
-  const handleSubmit = (evt: React.FormEvent<HTMLFormElement>) => {
-    evt?.preventDefault()
-    const data = new FormData(evt?.currentTarget)
-    console.log(">>>email: ", data.get("email"))
-    console.log(">>>password: ", data.get("password"))
+  const navigate = useNavigate()
+  const { handleSubmit, control } = useForm()
+  const defaultValues = {
+    email: "",
+    password: ""
+  }
+  const onSubmit = (data: any) => {
+    console.log(">>>email: ", data?.email)
+    console.log(">>>password: ", data?.password)
+    navigate("/auth/")
   }
 
   return (
@@ -119,29 +125,35 @@ const SignInSide = () => {
           <Box
             component="form"
             noValidate
-            onSubmit={handleSubmit}
+            onSubmit={handleSubmit(onSubmit)}
             sx={{ mt: 1, textAlign: "left" }}
           >
-            <TextField
+            <TextInput
+              name="email"
+              control={control}
+              initialValue={defaultValues.email}
+              rules={{ required: t("EmailRequired") }}
               margin="normal"
               required
               fullWidth
               id="email"
               label={t("EmailAddress")}
-              name="email"
               autoComplete="email"
               // eslint-disable-next-line jsx-a11y/no-autofocus
               autoFocus
               variant="standard"
             />
-            <TextField
+            <TextInput
+              name="password"
+              control={control}
+              initialValue={defaultValues.password}
+              rules={{ required: t("PasswordRequired") }}
               margin="normal"
               required
               fullWidth
               id="password"
               type="password"
               label={t("Password")}
-              name="password"
               autoComplete="current-password"
               variant="standard"
             />

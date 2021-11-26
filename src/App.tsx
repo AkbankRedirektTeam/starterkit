@@ -4,6 +4,7 @@ import CssBaseline from "@mui/material/CssBaseline"
 import Box from "@mui/material/Box"
 import { createTheme, ThemeProvider } from "@mui/material/styles"
 import SignInSide from "features/login"
+import Auth from "features/auth"
 import initLang from "i18n"
 import "./App.css"
 
@@ -18,6 +19,7 @@ const App = () => {
         <Box component="header" className="App-header">
           <Routes>
             <Route path="/" element={<SignInSide />} />
+            <Route path="/auth/" element={<Auth />} />
           </Routes>
         </Box>
       </Box>
